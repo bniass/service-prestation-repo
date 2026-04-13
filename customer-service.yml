@@ -49,13 +49,6 @@ server:
 spring:
   application:
     name: customer-service
-
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8180/realms/prestation-app-realm
-  
   datasource:
     driver-class-name: org.postgresql.Driver
     url:  jdbc:postgresql://localhost:5432/my-customer-service
@@ -69,7 +62,11 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show_sql: true
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/prestation-app-realm
 app:
   keycloak:
     client-id: prestation-app
